@@ -4,13 +4,13 @@ const cors = require("cors");
 const helmet = require("helmet");
 const logger = require("morgan");
 
-const routes = require("./routes");
+dotenv.config();
 
-const { PORT, DEBUG, } = process.env;
+const { PORT, DEBUG } = process.env;
 const port = PORT || 3001;
 
 const app = express();
-dotenv.config();
+const routes = require("./routes");
 
 // Middleware
 app.use(helmet());
